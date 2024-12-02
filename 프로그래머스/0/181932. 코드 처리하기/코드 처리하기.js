@@ -1,19 +1,17 @@
 function solution(code) {
-    let mode = 0;  // mode를 0으로 초기화
-    let ret = '';  // ret 변수명 사용
-    
-    for (let idx = 0; idx < code.length; idx++) {
-        if (code[idx] === '1') {
-            mode = 1 - mode;  // mode를 0과 1 사이로 토글
-            continue;
-        }
-        
-        if (mode === 0 && idx % 2 === 0) {
-            ret += code[idx];
-        } else if (mode === 1 && idx % 2 === 1) {
-            ret += code[idx];
-        }
+  let mode = false;
+  let answer = '';
+  for (let i = 0; i < code.length; i++) {
+    if (code[i] === '1') {
+      mode = !mode;  
+      continue;  
     }
-    
-    return ret === '' ? 'EMPTY' : ret;
+    if (mode && i % 2 === 1) {  
+      answer += code[i];
+    } else if (!mode && i % 2 === 0) { 
+      answer += code[i];
+    }
+  }
+  return answer ? answer : 'EMPTY';
 }
+    
