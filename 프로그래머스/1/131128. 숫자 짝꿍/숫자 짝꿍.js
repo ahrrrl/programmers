@@ -8,10 +8,10 @@ function solution(X, Y) {
     
     for (const numSt of X) {
         const num = Number(numSt);
-        const preNum = countMap.get(num)
-        if(countMap.has(num) && preNum > 0) {
+        const preNumCount = countMap.get(num)
+        if(countMap.has(num) && preNumCount > 0) {
             result.push(num);
-            countMap.set(num, preNum - 1);
+            countMap.set(num, preNumCount - 1);
         }
     }
     
