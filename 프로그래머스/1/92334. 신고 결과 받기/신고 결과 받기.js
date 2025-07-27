@@ -15,7 +15,7 @@ function solution(id_list, report, k) {
         reportedMap[reported].push(reporter);
     }
 
-    Object.entries(reportedMap).map(([reported, arr], i) => {
+    Object.entries(reportedMap).forEach(([reported, arr], i) => {
         if(arr.length >= k) {
             for( name of arr) {
                 valiedReportCount[name] += 1;
