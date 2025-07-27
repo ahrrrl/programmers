@@ -22,6 +22,6 @@ function solution(new_id) {
     while(vailedRange.length < 3) {
         vailedRange.push(vailedRange[vailedRange.length - 1]);
     }
-    console.log(vailedRange)
+
     return vailedRange.join('');
 }
