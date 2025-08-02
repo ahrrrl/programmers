@@ -1,18 +1,16 @@
 function solution(s){
     lowerStr = s.toLowerCase();
-    let ynum = 0;
-    let pnum = 0;
+    let yCount = 0;
+    let pCount = 0;
     for (let i = 0; i < lowerStr.length; i++){
         if(lowerStr[i] === 'p') {
-            pnum += 1;
+            pCount += 1;
         }
         if(lowerStr[i] === 'y') {
-            ynum += 1;
+            yCount += 1;
         }
     }
-    if (ynum + pnum === 0){
-        return true
-    }
+
     
-    return ynum === pnum ? true : false;
+    return yCount === pCount;
 }
